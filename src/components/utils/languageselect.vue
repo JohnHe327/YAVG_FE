@@ -10,11 +10,12 @@ export default {
 
   data() {
     return {
-      languagelist: ["C++","C","Python3","Python2","Swift5.1","Java"]
+      languagelist: ["Verilog"]
     };
   },
+  /*
   created() {
-
+  
     var sb = this.$store.state.sb
     if( sb ==undefined){
       this.$axios
@@ -36,8 +37,8 @@ export default {
           this.languagelist = sb[0].openlanguage.split("|");
         } 
     }
-
   },
+  */
   methods: {}
 };
 </script>

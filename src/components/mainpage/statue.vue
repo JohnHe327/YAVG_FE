@@ -289,12 +289,8 @@ export default {
         .then(response => {
           this.code = response.data.code;
           this.curid = row.id;
-          if (response.data.language == "Python2") this.curlang = 'py'
-          if (response.data.language == "Python3") this.curlang = 'py'
-          if (response.data.language == "C++") this.curlang = 'cpp'
-          if (response.data.language == "C") this.curlang = 'c'
-          if (response.data.language == "Java") this.curlang = 'java'
-          if (response.data.language == "Swift5.1") this.curlang = 'swift'
+          if (response.data.language == "Verilog") this.curlang = 'v'
+          // if (response.data.language == "C") this.curlang = 'c'
 
           this.compilemsg = "编译成功！"
           if (row.result != "Accepted")
@@ -576,7 +572,7 @@ export default {
       },
       isadmin: false,
       curid: 0,
-      curlang: 'cpp',
+      curlang: 'v',
       tableData: [],
       currentpage: 1,
       pagesize: 30,
@@ -609,4 +605,3 @@ export default {
   }
 };
 </script>
-

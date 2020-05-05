@@ -59,7 +59,7 @@ export default {
       wikiopen: true,
       tableData: [],
       msg: "",
-      openlanguage:"C++|C|Python3|Swift5.1|Java",
+      openlanguage:"Verilog",// Verilog|SystemVerilog
       openoi:true,
       openstatus:true,
       openvisitor:true,

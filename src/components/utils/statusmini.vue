@@ -155,12 +155,8 @@ export default {
         .then(response => {
           this.code = response.data.code;
           this.curid = id
-          if(response.data.language=="Python2") this.curlang = 'py'
-          if(response.data.language=="Python3") this.curlang = 'py'
-          if(response.data.language=="C++") this.curlang = 'cpp'
-          if(response.data.language=="C") this.curlang = 'c'
-          if(response.data.language=="Java") this.curlang = 'java'
-          if(response.data.language=="Swift5.1") this.curlang = 'swift'
+          if(response.data.language=="Verilog") this.curlang = 'v'
+          // if(response.data.language=="C") this.curlang = 'c'
 
           this.compilemsg = "编译成功！"
           if (result!="Accepted")
@@ -340,7 +336,7 @@ export default {
       username: "",
       contest:"",
       curid:0,
-      curlang:'cpp',
+      curlang:'v',
       dialogVisible: false,
       code: "",
       compilemsg: "无权限查看！",
@@ -354,4 +350,3 @@ export default {
   }
 };
 </script>
-

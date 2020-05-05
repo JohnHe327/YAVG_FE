@@ -263,7 +263,7 @@ export default {
           this.context +=
             "## " + this.realdata[this.exportlist[i]][j].title + "\n";
           this.context += this.realdata[this.exportlist[i]][j].des + "\n";
-          this.context += "```cpp\n";
+          this.context += "```verilog\n";
           this.context += this.realdata[this.exportlist[i]][j].code + "\n";
           this.context += "```\n\n";
         }

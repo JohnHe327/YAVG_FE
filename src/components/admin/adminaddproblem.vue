@@ -44,7 +44,7 @@
     </el-form-item>
 
     <el-form-item
-      label="模板代码：（用*****作为语言分割，如 *****C++***** xxxx *****C***** xxxx *****Python2***** xxxxx）"
+      label="模板代码：（用*****作为语言分割，如 *****Verilog***** xxxx *****C***** xxxx *****C++***** xxxxx）"
       v-show="addproblemform.istemp"
     >
       <el-input type="textarea" v-model="addproblemform.template" autosize style="width:800px;"></el-input>
@@ -154,7 +154,7 @@ export default {
         auth: 2,
         tag: "简单题|模拟",
         template:
-          "*****C++*****\n\n*****C*****\n\n*****Python2*****\n\n*****Python3*****\n\n*****Java*****\n\n*****Swift5.1*****\n\n",
+          "*****Verilog*****\n\n",
         level: 3,
         score: 100,
         oj: "LPOJ",
