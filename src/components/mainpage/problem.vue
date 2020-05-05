@@ -113,7 +113,7 @@ export default {
       pagesize: 15,
       totalproblem: 10,
       tableData: [],
-      tagnames: [],
+      tagnames: ['ALU','decoder','FIFO','ip','MUX','sort','testbench','tutorial','VGA','门级','RTL级','行为级','七段数码管','寄存器堆'],
       ac: 100,
       mle: 100,
       tle: 100,
@@ -399,10 +399,10 @@ export default {
         this.totalproblem = response.data.count;
       });
 
-    this.$axios.get("/problemtag/").then(response => {
-      for (var i = 0; i < response.data.length; i++)
-        this.tagnames.push(response.data[i]["tagname"]);
-    });
+    // this.$axios.get("/problemtag/").then(response => {
+    //   for (var i = 0; i < response.data.length; i++)
+    //     this.tagnames.push(response.data[i]["tagname"]);
+    // });
   }
 };
 </script>
