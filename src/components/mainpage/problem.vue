@@ -4,9 +4,10 @@
       <el-card shadow="always">
         <el-switch style="float: right;"
                    v-model="islpoj"
-                   active-text="LPOJ"
+                   active-text="YAVG"
                    inactive-text="All"
                    @change="statuechange"></el-switch>
+        <!--上方选页-->
         <el-pagination @size-change="handleSizeChange"
                        @current-change="handleCurrentChange"
                        :current-page="currentpage"
@@ -15,6 +16,7 @@
                        layout="total, sizes, prev, pager, next, jumper"
                        :total="totalproblem"></el-pagination>
 
+        <!--表格-->
         <el-table :data="tableData"
                   :row-class-name="tableRowClassName"
                   @cell-mouse-enter="changestatistices"
@@ -55,6 +57,7 @@
                            label="Score"
                            :width="70"></el-table-column>
         </el-table>
+        <!--下方选页-->
         <center>
           <el-pagination @size-change="handleSizeChange"
                          @current-change="handleCurrentChange"
@@ -66,12 +69,15 @@
         </center>
       </el-card>
     </el-col>
+    <!--右侧栏-->
     <el-col :span="6">
+      <!--Statistics-->
       <el-row :gutter="15">
         <el-col>
           <prostatistice ref="prosta"></prostatistice>
         </el-col>
       </el-row>
+      <!--搜索框-->
       <el-row>
         <el-card shadow="always">
           <el-input placeholder="Search..."
@@ -83,6 +89,7 @@
           </el-input>
         </el-card>
       </el-row>
+      <!--tag filter-->
       <el-row :gutter="15">
         <el-col>
           <el-card shadow="always">

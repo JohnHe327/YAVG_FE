@@ -3,9 +3,11 @@
     <el-col :span="18">
       <el-row>
         <el-card shadow="always">
+          <!--problem id-->
           <el-row :gutter="18"
-                  id="title">{{(this.oj=="LPOJ"?"LPOJ":"")+(this.oj=="LPOJ"?" - ":"")+(this.oj=="LPOJ"?this.proid:"")+' '}}{{title}}</el-row>
+                  id="title">{{(this.oj=="LPOJ"?"YAVG":"")+(this.oj=="LPOJ"?" - ":"")+(this.oj=="LPOJ"?this.proid:"")+' '}}{{title}}</el-row>
           <br>
+          <!--description-->
           <el-row :gutter="18"
                   id="des">Description</el-row>
           <el-row :gutter="18"
@@ -14,10 +16,11 @@
                  v-html="des"
                  :key="des"></div>
           </el-row>
-
+          <!--img-->
           <img :src="'data:image/jpeg;base64,'+imgcode"
                class="img-responsive" v-if="imgcode!=''">
 
+          <!--input description-->
           <el-row :gutter="18"
                   id="des">Input</el-row>
           <el-row :gutter="18"
@@ -25,6 +28,7 @@
             <div style="margin-right:50px;word-break:break-all;white-space:pre-line;"
                  v-html="input"></div>
           </el-row>
+          <!--output description-->
           <el-row :gutter="18"
                   id="des">Output</el-row>
           <el-row :gutter="18"
@@ -32,7 +36,7 @@
             <div style="margin-right:50px;word-break:break-all;white-space:pre-line;"
                  v-html="output"></div>
           </el-row>
-
+          <!--sample-->
           <el-row :gutter="18"
                   style="left:10px">
             <el-row :gutter="18"
@@ -64,12 +68,15 @@
             </el-row>
           </el-row>
 
+          <!--
           <el-row :gutter="18"
                   id="des">Source</el-row>
           <el-row :gutter="18"
                   id="detail">
             <div style="margin-right:50px;">{{source}}</div>
           </el-row>
+          -->
+          <!--hint-->
           <el-row :gutter="18"
                   id="des">Hint</el-row>
           <el-row :gutter="18"
@@ -81,12 +88,13 @@
       </el-row>
       <el-row>
         <el-card shadow="always">
+          <!--toolbar-->
           <el-row :gutter="15">
             <el-col :span="3">
               <div id="des"
                    style="padding: 5px 10px;">Language:</div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="3">
               <el-select v-model="language"
                          placeholder="请选择"
                          @change="changetemplate">
@@ -94,24 +102,25 @@
               </el-select>
             </el-col>
             <el-col :span="2">
-              <el-button type="primary"
+              <el-button type="success"
                          @click="submit"
                          style="font-weight:bold;margin-left:10px;">Submit</el-button>
             </el-col>
             <el-col :span="2">
-              <el-button type="primary"
+              <el-button type="danger"
                          @click="code = ''"
-                         style="font-weight:bold;margin-left:10px;">Reset</el-button>
+                         style="font-weight:bold;margin-left:30px;">Reset</el-button>
             </el-col>
 
-            <el-col :span="15">
+            <el-col :span="8">
               <el-button round
                          :type="judgetype"
                          :loading="loadingshow"
-                         style="font-weight:bold;margin-left:10px;"
+                         style="font-weight:bold;margin-left:40px;"
                          @click="showdialog">{{submitbuttontext}}</el-button>
             </el-col>
           </el-row>
+          <!--input code-->
           <el-row>
             <codemirror v-model="code"
                         :options="cmOptions"></codemirror>
@@ -120,10 +129,13 @@
       </el-row>
     </el-col>
 
+    <!--侧栏-->
     <el-col :span="6">
+      <!--question info-->
       <el-row :gutter="15">
         <el-card shadow="always">
           <el-collapse v-model="activeNames">
+            <!---->
             <el-collapse-item name="1"
                               id="des">
               <template slot="title">
@@ -132,6 +144,7 @@
               </template>
               <div>{{author}}</div>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="2"
                               id="des">
               <template slot="title">
@@ -140,6 +153,7 @@
               </template>
               <div>{{addtime}}</div>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="3"
                               id="des">
               <template slot="title">
@@ -148,6 +162,7 @@
               </template>
               <div>{{oj}}</div>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="4"
                               id="des">
               <template slot="title">
@@ -156,6 +171,7 @@
               </template>
               <div>{{time}}</div>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="5"
                               id="des">
               <template slot="title">
@@ -164,6 +180,7 @@
               </template>
               <div>{{memory}}</div>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="7"
                               id="des">
               <template slot="title">
@@ -175,6 +192,7 @@
                       disable-transitions
                       hit>{{ level }}</el-tag>
             </el-collapse-item>
+            <!---->
             <el-collapse-item name="6"
                               id="des">
               <template slot="title">
@@ -192,9 +210,11 @@
           </el-collapse>
         </el-card>
       </el-row>
+      <!--prostatistics-->
       <el-row :gutter="15">
         <prostatistice ref="prosta"></prostatistice>
       </el-row>
+      <!--提交记录-->
       <el-row :gutter="15">
         <el-card>
           <h3>提交记录</h3>
